@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>
+		NEWS
+	</title>
+	<style>
+	     body{
+ 	     	margin:0 auto;
+	     }
+         header{
+         	background:grey;
+         	color: white;
+         	width:100vw;
+         	height: 10vh;
+            opacity: 0.8;
+         }
+         header div{
+         	width:100%;
+
+         }
+         .title {
+         	text-align: center;
+         	font-size: 1.3em;
+         	text-shadow: 2px 4px 7px red;
+         }
+         .options ul li{
+         	display: inline-block;
+         	width:15%;
+         	text-align: center;
+         	text-shadow: 1px 2px 4px black;
+            cursor: pointer;
+
+         	
+         }
+            .options ul li:hover{
+                       background-color: green;
+
+         	
+         }
+         .option ul{
+              float: left;
+              align-items: center;
+         }
+        .display{
+        	background-image:url('../static/images/nback.jpg');
+        	height: 90vh;
+        	width: 100vw;
+        	background-repeat: no-repeat;
+        	background-position: center;
+        	background-size: cover;
+            margin-top: 0;
+            overflow: auto;
+            opacity: 0.9;
+        }
+        .display div{
+        	display: none;
+        	background-color: grey;
+        	color: white;
+        }
+        #head{
+        	width: 100%;
+        	text-align: center;
+        	color: green;
+        	font-size: 1.4em;
+        	text-shadow: 3px 4px 6px white;
+        }
+
+	</style>
+</head>
+<body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+       $(document).ready(function()
+       {
+
+       	function clear()
+       		{
+       		$('.world').css('display','none');
+       		$('.india').css('display','none');
+       		$('.buisness').css('display','none');
+       		$('.sports').css('display','none');
+       		$('.tech').css('display','none');
+             
+       		}
+       	
+       	   $('.press').on('click',function()
+       	   {
+            clear();
+       	   	var x= $(this).attr('id');
+       	   	var y='.'+x;
+       	   	$(y).css('display','block');
+       	   	
+            
+            
+             
+
+
+       	   });
+
+
+       });
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+<header>
+<div class="title"><span>THE NEWS PORTAL</span></div>
+<div class="options">
+<ul type='none'>
+<li class="press" id="world">WORLD
+<li class="press" id="india">INDIA
+<li id="sports" class="press" >SPORTS
+<li id="tech" class="press" >TECH
+<li id="buisness" class="press" >BUISNESS
+</div>
+</header>
+<article class="display">>
+<div class="world"><center><span id="head">World</span></center>
+<br>
+<ul type="none">
+{% for n in news['World'] %}
+  <br>
+  <li>{{ n }}
+  <br>
+  
+{% endfor %}
+</div>
+
+<div class="india"><center><span id="head">INDIA</span></center>
+<br>
+<ul type="none">
+{% for n in news['India'] %}
+   <br>
+  <li>{{ n }}
+  <br>
+{% endfor %}
+</div>
+
+<div class="sports"><center><span id="head">SPORTS</span></center>
+<br>
+<ul type="none">
+{% for n in news['Sports'] %}
+  <br>
+  <li>{{ n }}
+  <br>
+{% endfor %}
+</div>
+
+<div class="tech"><center><span id="head">TECHNOLOGY</span></center>
+<br>
+<ul type="none">
+{% for n in news['Tech'] %}
+  <br>
+  <li>{{ n }}
+  <br>
+  
+{% endfor %}
+</div>
+
+<div class="buisness"><center><span id="head">BUSINESS</span></center>
+<br><br>
+<ul type="none">
+{% for n in news['Business'] %}
+  <br>
+  <li>{{ n }}
+  <br>
+  
+{% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+</body>
+</html>
