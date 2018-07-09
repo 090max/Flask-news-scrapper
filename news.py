@@ -12,7 +12,7 @@ def gethtml(url):
         uClient.close()
         return page_html
 
-@app.route("/news", methods=["GET", "PUT"])
+@app.route("/news", methods=["GET"])
 def news():
         NEWS={ "World":[], "India":[], "Sports":[], "Business":[], "Tech":[]}
 
