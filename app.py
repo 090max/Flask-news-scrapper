@@ -75,11 +75,11 @@ def news():
                 NEWS['Business'].append(B_news)
                 i=i+1
 
-        myurl='https://indianexpress.com/section/technology/'
+        myurl='https://indianexpress.com/section/technology/tech-news-technology/'
         (page_html)=gethtml(myurl)
         #html parsing
         page_soup=soup(page_html,"html.parser")
-        container = page_soup.find("div",{"class":"top-storybx"})
+        container = page_soup.find("div",{"class":"l-grid-wrapper"})
         cont=container.findAll('a')
         i=0
         #print("----------------------------------TECH----------------------------")     
