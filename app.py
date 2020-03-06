@@ -79,7 +79,7 @@ def news():
         (page_html)=gethtml(myurl)
         #html parsing
         page_soup=soup(page_html,"html.parser")
-        container = page_soup.find("div",{"class":"l-grid-wrapper"})
+        container = page_soup.find("div",{"class":"nation"})
         cont=container.findAll('a')
         i=0
         #print("----------------------------------TECH----------------------------")     
